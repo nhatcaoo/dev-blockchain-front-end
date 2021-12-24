@@ -4,7 +4,14 @@ import styled from '@emotion/styled'
 import Card from '../../components/Card'
 import Modal from '../../components/Modal'
 const Container = styled(Box)`
-  width: calc(100% - 16px);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+> * + * {
+  margin-top: 30px !important;
+}
 `
 export default function Marketplace() {
     const uriSample = 'https://storage.googleapis.com/assets.axieinfinity.com/axies/2222242/axie/axie-full-transparent.png';

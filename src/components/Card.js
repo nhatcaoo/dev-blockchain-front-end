@@ -25,6 +25,10 @@ export default forwardRef(function Card(props, ref) {
                         }}
                     />
                     <Button>buy</Button>
+                    <Button>Sell</Button>
+                    <Button>Transfer</Button>
+                    <Button>Cancel</Button>
+                    <Button>Stake</Button>
                 </Box>
             </Box>
         </Box>
