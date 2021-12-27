@@ -19,19 +19,19 @@ export const NFT_ADDRESS = {
   [ChainId.MAINNET]: undefined,
   [ChainId.ROPSTEN]: undefined,
   [ChainId.RINKEBY]: undefined,
-  [ChainId.BSCTESTNET]: '0xB0A7Ca046a3744D38BdAAC8094a9E69D0933Ebdd',
+  [ChainId.BSCTESTNET]: '0xe91E22F07512781c47eA07C5CF4923795f9F1eEc',
 }
 export const NFT_MARKET_ADDRESS = {
   [ChainId.MAINNET]: undefined,
   [ChainId.ROPSTEN]: undefined,
   [ChainId.RINKEBY]: undefined,
-  [ChainId.BSCTESTNET]: '0xD1EC0CbCd5051B430e2F7f5f89dd8e6045ABc367',
+  [ChainId.BSCTESTNET]: '0xD82630d604f9EFdA961f15B7DA5CE4b90F820802',
 }
 export const STAKING_ADDRESS = {
   [ChainId.MAINNET]: undefined,
   [ChainId.ROPSTEN]: undefined,
   [ChainId.RINKEBY]: undefined,
-  [ChainId.BSCTESTNET]: '0x5a6B7EE30e8D8ae839431194B5DE7690822B6883',
+  [ChainId.BSCTESTNET]: '0xef07de89CEeADe48f26281391DDcFAEC2103cABD',
 }
 export const SECOND_PER_BLOCK = {
   [ChainId.MAINNET]: undefined,
