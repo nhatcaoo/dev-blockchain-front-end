@@ -10,7 +10,7 @@ const StyledImage = styled(Box)`
   background-size: contain, cover;
 `
 export default forwardRef(function Card(props, ref) {
-    const { item } = props
+    const { type, item } = props
 
     return (
         <Box padding="16px" width="100%" >
