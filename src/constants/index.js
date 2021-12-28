@@ -33,40 +33,6 @@ export const STAKING_ADDRESS = {
   [ChainId.RINKEBY]: undefined,
   [ChainId.BSCTESTNET]: '0xD7c180dC1A2b828B3fFC3C22F1F0f43D77438BbD',
 }
-export const SECOND_PER_BLOCK = {
-  [ChainId.MAINNET]: undefined,
-  [ChainId.ROPSTEN]: undefined,
-  [ChainId.RINKEBY]: 14,
-  [ChainId.BSCTESTNET]: 14,
-}
-
-export const OWNER_NFT = {
-  [ChainId.MAINNET]: undefined,
-  [ChainId.ROPSTEN]: undefined,
-  [ChainId.RINKEBY]: undefined,
-  [ChainId.BSCTESTNET]: '0x090030D40A193a5966014c2D0B014F21459cb33e',
-}
-
-export const OWNER_NFT_MARKET = {
-  [ChainId.MAINNET]: undefined,
-  [ChainId.ROPSTEN]: undefined,
-  [ChainId.RINKEBY]: undefined,
-  [ChainId.BSCTESTNET]: '0x090030D40A193a5966014c2D0B014F21459cb33e',
-}
-export const EXPLORER_TX = {
-  [ChainId.MAINNET]: undefined,
-  [ChainId.ROPSTEN]: undefined,
-  [ChainId.RINKEBY]: 'https://rinkeby.etherscan.io/tx/',
-}
-export const BLOCK_COUNT_DOWN = {
-  [ChainId.MAINNET]: undefined,
-  [ChainId.ROPSTEN]: undefined,
-  [ChainId.RINKEBY]: 'https://rinkeby.etherscan.io/block/countdown/',
-}
-
-
-
-export const SECONDS_TIME_MAX_SELL = 3600 * 24 * 7 * 2 // 2 weeks
 
 export const LISTING_PRICE = 0.00001 // Ether
 
