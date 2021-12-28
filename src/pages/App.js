@@ -70,7 +70,7 @@ function App() {
             </div>
           ) : (
             <div tabIndex="0" className="account" onClick={connectWallet}>
-              {'Connect Metamask (Rinkeby)'}
+              {'Connect Metamask (BSC Test net)'}
             </div>
           )}
         </div>
