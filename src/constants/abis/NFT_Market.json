@@ -141,6 +141,11 @@
       {
         "components": [
           {
+            "internalType": "uint256",
+            "name": "itemId",
+            "type": "uint256"
+          },
+          {
             "internalType": "address",
             "name": "nftContract",
             "type": "address"

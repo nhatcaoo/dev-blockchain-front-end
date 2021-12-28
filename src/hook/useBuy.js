@@ -14,7 +14,7 @@ const useBuyToken = () => {
         const borrowTx = await marketContract.buyMarketItem(
           id,
           {
-            value: ethers.utils.parseUnits(price.toString(), 'ether').toString(),
+            value: ethers.utils.parseUnits(price.toString(), 'ether'),
           },
         )
         return true

@@ -1,19 +1,22 @@
 import { useCallback } from 'react'
 import useNtfContract from './useNtfContract'
+import useNtfMarketContract from './useNtfMarketContract'
 import { useSelector } from 'react-redux'
-import { LISTING_PRICE, NFT_ADDRESS } from '../constants'
+import { LISTING_PRICE, NFT_ADDRESS, NFT_MARKET_ADDRESS } from '../constants'
 import { ethers } from 'ethers'
 
-const useCreateToken = () => {
+const useTransfer = () => {
   const nftContract = useNtfContract()
   const chainId = useSelector((state) => state.provider.chainId)
+  const account = useSelector((state) => state.provider.account)
+
   return useCallback(
-    async (uri, price) => {
+    async (id, to) => {
       try {
-        const borrowTx = await nftContract.distributeToken(
-          uri,
-          ethers.utils.parseUnits(price, 'ether'),
-         
+        const borrowTx = await nftContract.transferFrom(
+          account,
+          to,
+          id,
         )
         return true
       } catch (e) {
@@ -25,4 +28,4 @@ const useCreateToken = () => {
   )
 }
 
-export default useCreateToken
+export default useTransfer

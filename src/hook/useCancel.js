@@ -6,6 +6,7 @@ import { LISTING_PRICE, NFT_ADDRESS, NFT_MARKET_ADDRESS } from '../constants'
 import { ethers } from 'ethers'
 
 const useCancel = () => {
+  const nftContract = useNtfContract()
   const marketContract = useNtfMarketContract()
   const chainId = useSelector((state) => state.provider.chainId)
   return useCallback(
@@ -20,7 +21,7 @@ const useCancel = () => {
         return false
       }
     },
-    [chainId, marketContract],
+    [chainId, nftContract],
   )
 }
 

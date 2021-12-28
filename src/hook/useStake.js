@@ -19,7 +19,7 @@ const useStakeToken = () => {
         return false
       }
     },
-    [chainId, nftContract],
+    [chainId, stakeContract],
   )
 }
 

@@ -4,12 +4,15 @@ import { useHistory, useLocation } from 'react-router'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { connectWallet } from '../utils'
 import Marketplace from './Marketplace'
+import BuyFromSupplier from './BuyFromSupplier'
 import useProvider from '../hook/useProvider'
 import MyNft from './MyNft'
 import Create from './Create'
 import { fetchApproveForAll } from '../states/providerSlice'
 
 import './App.scss'
+import MyStake from './MyStake'
+import CreateByArtist from './CreateByArtist'
 
 function App() {
   useProvider()
@@ -17,32 +20,45 @@ function App() {
   const account = useSelector((state) => state.provider.account)
 
   const { pathname } = useLocation()
-  console.log(account)
   const history = useHistory()
-  console.log("app")
 
   const activeIndex =
-    pathname === '/marketplace'
+    pathname === '/supplier'
       ? 0
-      : pathname === '/mynft'
+      : pathname === '/marketplace'
         ? 1
-        : pathname === '/create'
+        : pathname === '/mynft'
           ? 2
-          : undefined
+          : pathname === '/mystake'
+            ? 3
+            : pathname === '/create'
+              ? 4
+              : pathname === '/create-by-artist'
+                ? 5
+                : undefined
   return (
     <div className="app">
       <header className="header">
         <div style={{ flex: 1 }} />
         <nav className="nav">
           <ul>
-            <li tabIndex="0" className={activeIndex === 0 ? 'active' : ''} onClick={() => history.push('/marketplace')}>
+            <li tabIndex="0" className={activeIndex === 0 ? 'active' : ''} onClick={() => history.push('/supplier')}>
+              {'Buy from supplier'}
+            </li>
+            <li tabIndex="0" className={activeIndex === 1 ? 'active' : ''} onClick={() => history.push('/marketplace')}>
               {'Marketplace'}
             </li>
-            <li tabIndex="0" className={activeIndex === 1 ? 'active' : ''} onClick={() => history.push('/mynft')}>
+            <li tabIndex="0" className={activeIndex === 2 ? 'active' : ''} onClick={() => history.push('/mynft')}>
               {'My NFT'}
             </li>
-            <li tabIndex="0" className={activeIndex === 2 ? 'active' : ''} onClick={() => history.push('/create')}>
+            <li tabIndex="0" className={activeIndex === 3 ? 'active' : ''} onClick={() => history.push('/mystake')}>
+              {'My Stake'}
+            </li>
+            <li tabIndex="0" className={activeIndex === 4 ? 'active' : ''} onClick={() => history.push('/create')}>
               {'Create'}
+            </li>
+            <li tabIndex="0" className={activeIndex === 5 ? 'active' : ''} onClick={() => history.push('/create-by-artist')}>
+              {'Create by artist'}
             </li>
           </ul>
         </nav>
@@ -61,10 +77,13 @@ function App() {
       </header>
       <div className="app-body">
         <Switch>
+          <Route exact strict path="/supplier" component={BuyFromSupplier} />
           <Route exact strict path="/marketplace" component={Marketplace} />
           <Route exact strict path="/mynft" component={MyNft} />
+          <Route exact strict path="/mystake" component={MyStake} />
           <Route exact strict path="/create" component={Create} />
-          <Route component={() => <Redirect to="/marketplace" />} />
+          <Route exact strict path="/create-by-artist" component={CreateByArtist} />
+          <Route component={() => <Redirect to="/supplier" />} />
         </Switch>
       </div>
     </div>

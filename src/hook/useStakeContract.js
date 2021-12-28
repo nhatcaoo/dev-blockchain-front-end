@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { ABI, NFT_ADDRESS } from '../constants'
+import { ABI, STAKING_ADDRESS } from '../constants'
 
 const useStakeContract = () => {
   const [stakeContract, setStakeContract] = useState()
@@ -12,9 +12,9 @@ const useStakeContract = () => {
   useEffect(() => {
     ;(async () => {
       try {
-        if (provider && chainId && NFT_ADDRESS[chainId] && ABI['staking']) {
+        if (provider && chainId && STAKING_ADDRESS[chainId] && ABI['staking']) {
           const currentSigner = await provider.getSigner()
-          const contract = new ethers.Contract(NFT_ADDRESS[chainId], ABI['staking'], provider)
+          const contract = new ethers.Contract(STAKING_ADDRESS[chainId], ABI['staking'], provider)
           if (account) {
             setStakeContract(contract.connect(currentSigner))
           } else {

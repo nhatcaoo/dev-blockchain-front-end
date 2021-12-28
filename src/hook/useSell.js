@@ -12,7 +12,7 @@ const useSellToken = () => {
     async (id, price) => {
       try {
         const borrowTx = await marketContract.createMarketItem(
-          NFT_ADDRESS,
+          NFT_ADDRESS[chainId],
           id,
           ethers.utils.parseUnits(price.toString(), 'ether').toString(),
         )
